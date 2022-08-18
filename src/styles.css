@@ -18,9 +18,14 @@ h2 {
   margin-bottom: 0px;
   font-size: 18px;
   line-height: 20px;
-  font-weight: 400;
+  font-weight: 300;
   color: #444a5b;
 }
+
+.last-updated {
+  font-weight: 400;
+}
+
 .search-tools {
   max-width: 658px;
   font-size: 16px;
@@ -112,7 +117,11 @@ h2 {
 }
 
 .current-summary {
-  margin-left: 18px;
+  margin-left: 60px;
+}
+
+.current-summary::first-letter {
+  text-transform: capitalize;
 }
 
 .units {

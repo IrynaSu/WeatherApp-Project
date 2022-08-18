@@ -34,13 +34,15 @@
       </form>
     </div>
 
-    <h1>London</h1>
-    <h2>Thursday 21:32</h2>
+    <h1 id="city-name"></h1>
+    <h2>
+      <span class="last-updated">Last updated: </span><span id="date"></span>
+    </h2>
 
     <div class="container current">
       <div class="row">
         <div class="col current-temperature">
-          <span>24</span>
+          <span id="temperature"></span>
           <span class="units"
             ><a href="#">°C</a> | <a href="#" class="not-active">°F</a></span
           >
@@ -57,18 +59,20 @@
         <div class="col">
           <div class="current-paremeter">
             Humidity:
-            <span class="current-value">80</span>%
+            <span class="current-value" id="humidity"></span>%
           </div>
           <div class="current-paremeter">
             Wind:
-            <span class="current-value">5</span> km/h
+            <span class="current-value" id="wind-speed"></span> km/h
           </div>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-4 current-feel">Real feel <span>24</span>°</div>
-        <div class="col current-summary">Clouds</div>
+        <div class="col-3 current-feel">
+          Real feel <span id="real-feel"></span>°
+        </div>
+        <div class="col current-summary" id="description"></div>
       </div>
     </div>
 
