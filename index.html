@@ -4,7 +4,80 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Weather App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="search-tools">
+      <form>
+        <input
+          type="search"
+          placeholder="Enter a city"
+          class="city-search_field"
+          autocomplete="off"
+          autofocus="on"
+        />
+        <input type="submit" value="Search" class="city-search_button" />
+      </form>
+    </div>
+
+    <h1>London</h1>
+    <h2>Thursday 21:32</h2>
+
+    <div class="container current">
+      <div class="row">
+        <div class="col current-temperature">
+          <span>24</span>
+          <span class="units"
+            ><a href="#">°C</a> | <a href="#" class="not-active">°F</a></span
+          >
+        </div>
+
+        <div class="col">
+          <img
+            class="current-icon"
+            src="images/current-sun-cloud.svg"
+            alt="current weather icon"
+          />
+        </div>
+
+        <div class="col">
+          <div class="current-paremeter">
+            Humidity:
+            <span class="current-value">80</span>%
+          </div>
+          <div class="current-paremeter">
+            Wind:
+            <span class="current-value">5</span> km/h
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-4 current-feel">Real feel <span>24</span>°</div>
+        <div class="col current-summary">Clouds</div>
+      </div>
+    </div>
+
+    <div class="author">
+      <a href="https://github.com/IrynaSu/WeatherApp-Project" target="_blank"
+        >Open-source code</a
+      >
+      by Iryna Sushylova
+    </div>
+    <script src="src/index.js"></script>
+  </body>
 </html>
