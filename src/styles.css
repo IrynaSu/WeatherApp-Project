@@ -107,7 +107,7 @@ h2 {
 
 .current-feel,
 .current-summary {
-  margin-top: 8px;
+  margin-top: 4px;
   font-size: 14px;
   line-height: 20px;
   font-weight: 300;
@@ -126,7 +126,7 @@ h2 {
   text-transform: capitalize;
 }
 
-.units {
+.units-container {
   float: right;
   position: relative;
   bottom: -8px;
@@ -136,16 +136,30 @@ h2 {
   color: #8f9299;
 }
 
-a {
+.units-container a {
   text-decoration: none;
   color: #336699;
 }
 
-.not-active {
+.units-container a:hover {
+  cursor: default;
+}
+
+.units-container .not-active {
   color: #8f9299;
 }
 
-a:hover {
+.units-container .not-active:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.author-link {
+  text-decoration: none;
+  color: #336699;
+}
+
+.author-link:hover {
   text-decoration: underline;
   color: #03359d;
 }

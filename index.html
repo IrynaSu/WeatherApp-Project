@@ -46,12 +46,13 @@
     </h2>
 
     <div class="container current">
-      <div class="row">
+      <div class="row" style="height: 90px">
         <div class="col current-temperature">
           <span id="temperature"></span>
-          <span class="units"
-            ><a href="#">°C</a> | <a href="#" class="not-active">°F</a></span
-          >
+          <div class="units-container">
+            <a href="#" id="celcius-link">°C</a> |
+            <a href="#" id="fahrenheit-link" class="not-active">°F</a>
+          </div>
         </div>
 
         <div class="col">
@@ -84,7 +85,10 @@
     </div>
 
     <div class="author">
-      <a href="https://github.com/IrynaSu/WeatherApp-Project" target="_blank"
+      <a
+        class="author-link"
+        href="https://github.com/IrynaSu/WeatherApp-Project"
+        target="_blank"
         >Open-source code</a
       >
       by Iryna Sushylova
