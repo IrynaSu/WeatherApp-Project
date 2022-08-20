@@ -21,7 +21,6 @@ function showDate(timestamp) {
 }
 
 function showTemp(response) {
-  console.log(response.data);
   document.querySelector("#city-name").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -44,9 +43,20 @@ function showTemp(response) {
     );
 }
 
-let apiKey = "3f8e63b0ac8703d0297945f6602e377d";
-let city = "London";
-let units = "metric";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+function showWeather(city) {
+  let apiKey = "3f8e63b0ac8703d0297945f6602e377d";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(showTemp);
+}
 
-axios.get(apiUrl).then(showTemp);
+function searchCity(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#city-input");
+  showWeather(cityInput.value);
+}
+
+showWeather("Limassol");
+
+let citySeacrhElement = document.querySelector("#city-search");
+citySeacrhElement.addEventListener("click", searchCity);
