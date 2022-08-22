@@ -20,6 +20,44 @@ function showDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  let forecastHTML = `<div class="row">`;
+  forecastHTML =
+    forecastHTML +
+    `    <div class="col-2">
+            <div class="card-forecast card-today">
+              <div class="card-day today">Today</div>
+              <img
+                class="card-icon"
+                src="file:///Users/irinabaturina/Desktop/SheCodes/WeatherApp/images/current-sun-cloud.svg"
+                alt=""
+              />
+    <div class="temperature-container">
+      <span class="card-max-temperature">30° </span><span class="card-min-temperature">35°</span></div>
+            </div>
+          </div>`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `    <div class="col-2">
+            <div class="card-forecast">
+              <div class="card-day">${day}</div>
+              <img
+                class="card-icon"
+                src="file:///Users/irinabaturina/Desktop/SheCodes/WeatherApp/images/current-sun-cloud.svg"
+                alt=""
+              />
+    <div class="temperature-container">
+      <span class="card-max-temperature">24° </span><span class="card-min-temperature">19°</span></div>
+            </div>
+          </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showTemp(response) {
   fahrenheitLink.classList.add("not-active");
   celciusLink.classList.remove("not-active");
@@ -94,3 +132,5 @@ let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", convertToCelcius);
 
 showWeather("Limassol");
+
+displayForecast();

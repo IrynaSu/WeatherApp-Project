@@ -168,3 +168,55 @@ h2 {
   font-size: 16px;
   line-height: 18px;
 }
+
+.forecast {
+  padding: 0px;
+  margin: 32px 0 0 0;
+  max-width: 653px;
+}
+
+.card-forecast {
+  width: 94px;
+  height: 98px;
+  border-radius: 10px;
+  background: #f9fafc;
+}
+
+.card-day {
+  padding-top: 4px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  color: #444a5b;
+}
+
+.card-icon {
+  display: block;
+  margin: 0 auto;
+  margin-top: 6px;
+}
+
+.temperature-container {
+  margin-top: 8px;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #444a5b;
+}
+
+.card-max-temperature {
+  font-weight: 500;
+}
+
+.card-min-temperature {
+  font-weight: 300;
+}
+
+.card-forecast.card-today {
+  background: linear-gradient(to bottom right, #ffffff, #e1eef8);
+}
+.card-day.today {
+  font-weight: 700;
+  color: #1b6aa5;
+}
