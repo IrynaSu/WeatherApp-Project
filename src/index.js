@@ -20,9 +20,16 @@ function showDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let day = date.getDay();
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#weather-forecast");
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
   let forecastHTML = `<div class="row">`;
   forecastHTML =
     forecastHTML +
@@ -31,31 +38,52 @@ function displayForecast() {
               <div class="card-day today">Today</div>
               <img
                 class="card-icon"
-                src="file:///Users/irinabaturina/Desktop/SheCodes/WeatherApp/images/current-sun-cloud.svg"
+                src="http://openweathermap.org/img/wn/${
+                  forecast[0].weather[0].icon
+                }@2x.png"
                 alt=""
               />
     <div class="temperature-container">
-      <span class="card-max-temperature">30° </span><span class="card-min-temperature">35°</span></div>
+      <span class="card-max-temperature">${Math.round(
+        forecast[0].temp.max
+      )}° </span><span class="card-min-temperature">${Math.round(
+      forecast[0].temp.min
+    )}°</span></div>
             </div>
           </div>`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `    <div class="col-2">
+  forecast.forEach(function (forecastDay, index) {
+    if (index > 0 && index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `    <div class="col-2">
             <div class="card-forecast">
-              <div class="card-day">${day}</div>
+              <div class="card-day">${formatDay(forecastDay.dt)}</div>
               <img
                 class="card-icon"
-                src="file:///Users/irinabaturina/Desktop/SheCodes/WeatherApp/images/current-sun-cloud.svg"
+                src="http://openweathermap.org/img/wn/${
+                  forecastDay.weather[0].icon
+                }@2x.png"
                 alt=""
               />
     <div class="temperature-container">
-      <span class="card-max-temperature">24° </span><span class="card-min-temperature">19°</span></div>
+      <span class="card-max-temperature">${Math.round(
+        forecastDay.temp.max
+      )}° </span><span class="card-min-temperature">${Math.round(
+          forecastDay.temp.min
+        )}°</span></div>
             </div>
           </div>`;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getCoordsForForecast(coordinates) {
+  let apiKey = "3f8e63b0ac8703d0297945f6602e377d";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function showTemp(response) {
@@ -82,6 +110,8 @@ function showTemp(response) {
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
+
+  getCoordsForForecast(response.data.coord);
 }
 
 function showWeather(city) {
@@ -132,5 +162,3 @@ let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", convertToCelcius);
 
 showWeather("Limassol");
-
-displayForecast();

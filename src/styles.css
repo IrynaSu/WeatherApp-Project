@@ -194,11 +194,12 @@ h2 {
 .card-icon {
   display: block;
   margin: 0 auto;
-  margin-top: 6px;
+  width: 40px;
+  height: 40px;
 }
 
 .temperature-container {
-  margin-top: 8px;
+  margin-top: 4px;
   font-size: 16px;
   line-height: 20px;
   text-align: center;
