@@ -74,7 +74,7 @@ h2 {
   padding: 30px 0px;
   max-width: 658px;
   border-radius: 10px;
-  background: linear-gradient(to bottom right, #ffffff, #eff5f9);
+  background: linear-gradient(to bottom right, #fefcea, #b3dafb);
 }
 
 .current-temperature {
@@ -89,6 +89,7 @@ h2 {
   margin: 0 0 0 32px;
   position: relative;
   bottom: 6px;
+  filter: brightness(125%);
 }
 
 .current-paremeter {
@@ -102,7 +103,6 @@ h2 {
 
 .current-value {
   margin-left: 4px;
-  font-weight: 300;
 }
 
 .current-feel,
@@ -111,7 +111,7 @@ h2 {
   font-size: 14px;
   line-height: 20px;
   font-weight: 300;
-  color: #8f9299;
+  color: #636467;
 }
 
 .current-feel {
@@ -171,19 +171,19 @@ h2 {
 
 .forecast {
   padding: 0px;
-  margin: 32px 0 0 0;
+  margin: 28px 0 0 0;
   max-width: 653px;
 }
 
 .card-forecast {
   width: 94px;
-  height: 98px;
+  height: 112px;
   border-radius: 10px;
-  background: #f9fafc;
+  background: #e5f3ff;
 }
 
 .card-day {
-  padding-top: 4px;
+  padding-top: 6px;
   text-align: center;
   font-size: 16px;
   line-height: 20px;
@@ -194,12 +194,12 @@ h2 {
 .card-icon {
   display: block;
   margin: 0 auto;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
+  filter: brightness(125%);
 }
 
 .temperature-container {
-  margin-top: 4px;
   font-size: 16px;
   line-height: 20px;
   text-align: center;
@@ -215,7 +215,7 @@ h2 {
 }
 
 .card-forecast.card-today {
-  background: linear-gradient(to bottom right, #ffffff, #e1eef8);
+  background: linear-gradient(to bottom right, #fefcea, #b3dafb);
 }
 .card-day.today {
   font-weight: 700;
