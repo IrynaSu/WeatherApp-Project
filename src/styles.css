@@ -130,28 +130,11 @@ h2 {
   float: right;
   position: relative;
   bottom: -8px;
+  left: -45px;
   font-size: 24px;
   line-height: 26px;
   font-weight: 500;
-  color: #8f9299;
-}
-
-.units-container a {
-  text-decoration: none;
   color: #336699;
-}
-
-.units-container a:hover {
-  cursor: default;
-}
-
-.units-container .not-active {
-  color: #8f9299;
-}
-
-.units-container .not-active:hover {
-  text-decoration: underline;
-  cursor: pointer;
 }
 
 .author-link {

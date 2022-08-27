@@ -87,8 +87,6 @@ function getCoordsForForecast(coordinates) {
 }
 
 function showTemp(response) {
-  fahrenheitLink.classList.add("not-active");
-  celciusLink.classList.remove("not-active");
   document.querySelector("#city-name").innerHTML = response.data.name;
   celciusTemperature = response.data.main.temp;
   document.querySelector("#temperature").innerHTML =
@@ -127,38 +125,10 @@ function searchCity(event) {
   showWeather(cityInput.value);
 }
 
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  let realFeelAElement = document.querySelector("#real-feel");
-  fahrenheitLink.classList.remove("not-active");
-  celciusLink.classList.add("not-active");
-  temperatureElement.innerHTML = Math.round((celciusTemperature * 9) / 5 + 32);
-  realFeelAElement.innerHTML = Math.round(
-    (celciusTemperatureRealFeel * 9) / 5 + 32
-  );
-}
-
-function convertToCelcius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  let realFeelAElement = document.querySelector("#real-feel");
-  fahrenheitLink.classList.add("not-active");
-  celciusLink.classList.remove("not-active");
-  temperatureElement.innerHTML = Math.round(celciusTemperature);
-  realFeelAElement.innerHTML = Math.round(celciusTemperatureRealFeel);
-}
-
 celciusTemperature = null;
 celciusTemperatureRealFeel = null;
 
 let citySeacrhElement = document.querySelector("#city-search");
 citySeacrhElement.addEventListener("click", searchCity);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", convertToFahrenheit);
-
-let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", convertToCelcius);
 
 showWeather("Limassol");
