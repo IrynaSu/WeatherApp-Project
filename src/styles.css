@@ -119,7 +119,7 @@ h2 {
 }
 
 .current-summary {
-  margin-left: 78px;
+  margin-left: 74px;
 }
 
 .current-summary::first-letter {
@@ -130,7 +130,7 @@ h2 {
   float: right;
   position: relative;
   bottom: -8px;
-  left: -45px;
+  left: -48px;
   font-size: 24px;
   line-height: 26px;
   font-weight: 500;
